@@ -29,9 +29,9 @@ services:
     - /run:uid=$USER_ID,gid=$GROUP_ID
     volumes:
       # Local data directory
-    - $PWD/data:/app/data
+    - ./data:/app/data
       # Override Weblate with local dir
-    - $PWD/..:/app/src
+    - ..:/app/src
     restart: always
     depends_on:
     - database
