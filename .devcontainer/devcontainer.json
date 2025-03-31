@@ -41,7 +41,15 @@
 				"ms-azuretools.vscode-docker", // Docker integration
 				"bierner.markdown-preview-github-styles", // Markdown preview
 				"esbenp.prettier-vscode", // Code formatter (if using client-side code)
-				"dbaeumer.vscode-eslint" // Linter (if using client-side code)
+				"dbaeumer.vscode-eslint", // Linter (if using client-side code)
+				"saoudrizwan.cline-dev", // Cline
+				"GitHub.copilot", // GitHub Copilot
+				"VisualStudioExptTeam.vscodeintellicode", // IntelliCode
+				"eamodio.gitlens", // GitLens
+				"redhat.vscode-yaml", // YAML support
+				"ms-python.black-formatter", // Black Formatter
+				"ms-python.isort", // isort
+				"tamasfe.even-better-toml" // TOML support
 			],
 			"settings": {
 				// Example: Set Python path if needed, though often auto-detected
