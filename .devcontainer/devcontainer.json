@@ -1,9 +1,6 @@
 {
 	"name": "Weblate Dev Container",
 
-	// Sets the run context to one level up from the .devcontainer folder.
-	"context": "..",
-
 	// Update the path to the docker-compose.yml file if it's not in the project root.
 	"dockerComposeFile": [
 		"../dev-docker/docker-compose.yml"
