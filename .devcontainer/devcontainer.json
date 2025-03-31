@@ -1,0 +1,60 @@
+{
+	"name": "Weblate Dev Container",
+
+	// Sets the run context to one level up from the .devcontainer folder.
+	"context": "..",
+
+	// Update the path to the docker-compose.yml file if it's not in the project root.
+	"dockerComposeFile": [
+		"../dev-docker/docker-compose.yml"
+	],
+
+	// The 'service' property specifies the service that VS Code should connect to.
+	"service": "weblate",
+
+	// The 'workspaceFolder' property specifies the path VS Code should open by default in
+	// the container. This is where your source code will be mounted.
+	"workspaceFolder": "/app/src",
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// This maps the Weblate development server port.
+	"forwardPorts": [8080], // Corresponds to WEBLATE_PORT default if not set, or the container port
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// Optional: Add commands like installing project dependencies if needed,
+	// although the Dockerfile likely handles this.
+	// "postCreateCommand": "pip install -r requirements-dev.txt",
+
+	// Use 'postStartCommand' to run commands after the container starts.
+	"postStartCommand": "git config --global core.fileMode false",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python", // Python language support
+				"ms-python.debugpy", // Python debugger
+				"ms-python.vscode-pylance", // Python language server
+				"batisteo.vscode-django", // Django specific helpers
+				"ms-azuretools.vscode-docker", // Docker integration
+				"bierner.markdown-preview-github-styles", // Markdown preview
+				"esbenp.prettier-vscode", // Code formatter (if using client-side code)
+				"dbaeumer.vscode-eslint" // Linter (if using client-side code)
+			],
+			"settings": {
+				// Example: Set Python path if needed, though often auto-detected
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				// Add other VS Code settings specific to this project
+				"files.eol": "\n",
+				// Point to linters/formatters inside the container if necessary
+				"python.linting.pylintEnabled": true,
+				"python.linting.enabled": true
+			}
+		}
+	}
+
+	// Uncomment to connect as a non-root user if needed. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
