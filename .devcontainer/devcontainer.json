@@ -3,7 +3,7 @@
 
 	// Update the path to the docker-compose.yml file if it's not in the project root.
 	"dockerComposeFile": [
-		"../dev-docker/docker-compose.yml"
+		"../dev-docker/docker-compose.limited.yml"
 	],
 
 	// The 'service' property specifies the service that VS Code should connect to.
