@@ -6,7 +6,7 @@
 
 set -e
 
-cd /app/src
+cd /workspaces/weblate
 
 echo "Exporting Weblate requirements..."
 uv export --no-config --format requirements-txt --python /usr/local/bin/python --all-extras --no-sources > /tmp/requirements.txt
