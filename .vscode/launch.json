@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Django (Weblate Dev Container)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "0.0.0.0:8080",
+                "--noreload"
+            ],
+            "django": true,
+            "console": "integratedTerminal",
+            "env": {
+                "DJANGO_SETTINGS_MODULE": "weblate.settings_docker",
+                "WEBLATE_DEBUG": "1",
+                "WEBLATE_LOGLEVEL": "DEBUG",
+                "WEBLATE_SITE_TITLE": "Devel Weblate",
+                "WEBLATE_ADMIN_NAME": "Weblate Admin",
+                "WEBLATE_ADMIN_EMAIL": "weblate@example.com",
+                "WEBLATE_ADMIN_PASSWORD": "admin",
+                "WEBLATE_SERVER_EMAIL": "weblate@example.com",
+                "WEBLATE_DEFAULT_FROM_EMAIL": "weblate@example.com",
+                "WEBLATE_ALLOWED_HOSTS": "*",
+                "WEBLATE_REGISTRATION_OPEN": "1",
+                "POSTGRES_PASSWORD": "weblate",
+                "POSTGRES_USER": "weblate",
+                "POSTGRES_DB": "weblate",
+                "POSTGRES_HOST": "database",
+                "POSTGRES_PORT": "",
+                "REDIS_HOST": "cache",
+                "REDIS_PORT": "6379",
+                "WEBLATE_EMAIL_HOST": "127.0.0.1",
+                "WEBLATE_EMAIL_HOST_USER": "",
+                "WEBLATE_EMAIL_HOST_PASSWORD": "",
+                "PYTHONPATH": "${workspaceFolder}",
+                "PYTHONUNBUFFERED": "1"
+            },
+            "python": "/app/venv/bin/python",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
